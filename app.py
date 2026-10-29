@@ -38,7 +38,7 @@ elif menu == " 2. Xem toàn bộ danh sách & tổng tiền":
         for stt, i in enumerate(ds_ct, start=1):
             tong += i['tien']
             st.write(f"{stt}. Mục: {i['ten']} | Số tiền: {i['tien']:,}đ")
-        st.metric(label="Tổng số tiền", f"{tong:,}đ")
+        st.metric(label="Tổng số tiền", value=f"{tong:,}đ")
 
 elif menu == " 3. Xoá khoản chi tiêu":
     if len(ds_ct) == 0:
