@@ -28,7 +28,7 @@ if menu == " 1. Thêm khoản chi mới":
     with cot1:
         ten_moi = st.text_input("Nhập khoản chi mới: ")
     with cot2:
-        tien_moi = st.number_input("Nhập số tiền: ", step=1000, format="%,d")
+        tien_moi = st.number_input("Nhập số tiền: ", step=1000)
     if st.button("Lưu khoản chi"):
             ds_ct.append({"ten": ten_moi, "tien": tien_moi})
             luu_file(ds_ct)
@@ -64,7 +64,7 @@ elif menu == " 4. Sửa khoản chi tiêu":
     else:
         sua = int(st.number_input("Nhập vị trí sửa: ", step=1)) - 1
         ten_moi = st.text_input("Hãy nhập tên mới: ")
-        tien_moi = st.number_input("Hãy nhập số tiền: ", step=1000, format="%,d")
+        tien_moi = st.number_input("Hãy nhập số tiền: ", step=1)
         if st.button("Xác nhận sửa"):
             if 0 <= sua < len(ds_ct):
                 ds_ct[sua]['ten'] = ten_moi
