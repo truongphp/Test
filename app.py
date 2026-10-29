@@ -18,13 +18,16 @@ menu = st.sidebar.radio("Chọn thao tác: ", [
 ])
 
 if menu == " 1. Thêm khoản chi mới":
-    ten_moi = st.text_input("Nhập khoản chi mới: ")
-    tien_moi = st.number_input("Nhập số tiền: ", step=1000)
-    if st.button("Lưu khoản chi"):
-        ds_ct.append({"ten": ten_moi, "tien": tien_moi})
-        with open("so_hoan_chinh.json", "w", encoding="utf-8") as f:
-            json.dump(ds_ct, f, ensure_ascii=False, indent=2)
-        st.success("Đã thêm")
+    cot1, cot2 = st.columns(2)
+    with cot1:
+        ten_moi = st.text_input("Nhập khoản chi mới: ")
+    with cot2:
+        tien_moi = st.number_input("Nhập số tiền: ", step=1000)
+        if st.button("Lưu khoản chi"):
+            ds_ct.append({"ten": ten_moi, "tien": tien_moi})
+            with open("so_hoan_chinh.json", "w", encoding="utf-8") as f:
+                json.dump(ds_ct, f, ensure_ascii=False, indent=2)
+            st.success("Đã thêm")
 
 elif menu == " 2. Xem toàn bộ danh sách & tổng tiền":
     if len(ds_ct) == 0:
