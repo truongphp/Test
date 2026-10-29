@@ -10,7 +10,7 @@ if os.path.exists("so_hoan_chinh.json"):
 else:
     ds_ct = []
 
-menu = st.radio("Chọn thao tác: ", [
+menu = st.sidebar.radio("Chọn thao tác: ", [
     " 1. Thêm khoản chi mới", 
     " 2. Xem toàn bộ danh sách & tổng tiền", 
     " 3. Xoá khoản chi tiêu", 
